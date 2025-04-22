@@ -215,6 +215,16 @@
 }
 
 
+@media screen and (max-width:425px) {
+    .seek-bar:hover {
+        box-shadow: none;
+    }
+
+    .controls button:hover {
+        box-shadow:none;
+        
+    }
+}
 
 
 

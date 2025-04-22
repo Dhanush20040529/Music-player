@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background-color: rgb(75, 75, 75);
+}
+
+.music-palyer {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 117, 157);
+    border-radius: 10px;
+    box-shadow: -10px 10px 10px rgb(34, 31, 31);
+
+}
+
+.tittle,
+.artist {
+    color: rgb(16, 15, 15);
+}
+
+
+.tittle{
+    margin: 1.5rem auto;
+}
+
+
+.image {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-image: url(image/oru-paarvaiyil.png);
+    background-position: center;
+    background-size: cover;
+    margin: 1.9rem auto;
+    animation: rotate 10s linear 0s infinite;
+    animation-play-state : paused;
+    border: 5px solid rgb(255, 255, 255);
+   
+}
+
+.disk-rotate {
+    animation-play-state: running;
+}
+
+/* .image::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: rgb(230, 117, 157);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+} */
+
+@keyframes rotate {
+
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.song-slider{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem auto;display: flex;
+    flex-direction: column;
+
+}
+
+.seek-bar{
+    -webkit-appearance: none;
+    width: 80%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: rgb(240, 41, 137);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s linear;   
+    
+}
+
+.seek-bar:hover {
+    box-shadow: 0 0 0 2px rgba(59, 15, 15, 0.2);
+}
+
+.seek-bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 1px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: -400px 0 0 400px bisque; 
+
+}
+
+.time {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(16, 15, 15);
+    padding-top: 0.3rem;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem  auto;
+    align-items:center ;
+    
+}
+
+
+    
+
+.controls button:hover {
+    box-shadow: 0 0 0 5px rgba(59, 15, 15, 0.2);
+    
+}
+
+
+
+
+
+.controls .play-btn {
+    width: 55px;
+    height: 55px;
+    outline: none;
+    border: none;
+    background-color: rgb(240, 41, 137);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s linear;
+   
+}
+
+
+.controls .play-btn span {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    height: 25px;
+    width: 6px;
+    background-color: white;
+    transform: translateY(-50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition:  0.5s;
+}
+
+
+.controls .play-btn span:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+
+.controls .pause-btn span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+
+.controls .pause-btn span:nth-child(1) {
+    width: 35%;
+    height: 53%;
+    transform: translate(20% , -50%) ; 
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+
+
+
+.backward-btn, .forward-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    color: rgb(240, 41, 137);
+    background-color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+
+
+
+
+
+
+
+

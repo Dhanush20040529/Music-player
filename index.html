@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- link google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <!-- link css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link font font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- link javascript file -->
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <audio src="" id="audio"></audio>
+            <div class="music-palyer">
+                <div class="tittle"><h2>song 1</h2></div>
+                <div class="artist"><h3>artist 1</h3></div>
+                <div class="image "></div>
+                <div class="song-slider">
+                    <input type="range"  class="seek-bar" value="0">
+                    <div class="time">
+                        <span class="current-time">00:00</span>
+                        <span class="song-duration">00:00</span>
+                    </div>
+                   
+                </div>
+                <div class="controls">
+                    <button class="backward-btn"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="play-btn pause-btn">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="forward-btn"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -20,6 +20,11 @@ const initApp = ()=>{
     const backwardBtn = document.querySelector(".backward-btn");
     const forwardBtn = document.querySelector(".forward-btn");
     const playBtn = document.querySelector(".play-btn");
+    const repeat1 = document.querySelector(".repeat-1");
+    const repeat = document.querySelector(".repeat");
+    const shuffle = document.querySelector(".shuffle");
+    const modes = document.querySelector(".modes")
+    
 
 
     // song data
@@ -69,7 +74,14 @@ const initApp = ()=>{
         }
         playBtn.classList.toggle("pause-btn");
         image.classList.toggle("disk-rotate");
+        console.log(playBtn.classList)
     });
+
+    // repeat one song function 
+
+    repeat1.addEventListener("click",()=>{
+        
+    })
 
 
     // set music 
@@ -83,6 +95,8 @@ const initApp = ()=>{
         image.style.backgroundImage =   `url(${song.imgPath})`;
         currentMusic = i
         currentTime.textContent = "00:00";
+        console.log(i)
+      
     }
         
     // format time function 
@@ -118,9 +132,109 @@ const initApp = ()=>{
 
 
         seekBar.addEventListener("change",()=>{
-            music.currentTime = seekBar.value
+            music.currentTime = seekBar.value;
+            console.log(music.currentTime)
         })
 
+       
+        // repeat one song function
+        
+        repeat1.addEventListener("click",()=>{
+            repeat.classList.add("block");
+            shuffle.classList.remove("block");
+            repeat1.classList.remove("block");
+
+            
+        })
+
+        setInterval(()=>{
+            if(repeat1.classList.contains("block") &&
+                formatTime(music.currentTime) == formatTime(music.duration))
+                {
+                    console.log("success")
+                    setMusic(currentMusic);
+                    playMusic()
+                   /*  music.pause();
+                    music.play(); */
+            }},300); 
+
+
+        // shuffle sons function 
+
+        shuffle.addEventListener("click",()=>{
+            repeat.classList.remove("block");
+            repeat1.classList.add("block");
+            shuffle.classList.remove("block");
+           
+        })
+
+        console.log(Math.floor(Math.random()*4))
+
+        setInterval(()=>{
+            if(shuffle.classList.contains("block") &&
+                formatTime(music.currentTime) == formatTime(music.duration))
+                {
+                    console.log("shuffle song")
+                    currentMusic = Math.floor(Math.random()*4)
+                    setMusic(currentMusic)
+                    
+                    music.play();
+                    setTimeout(()=>{
+                        seekBar.max = music.duration;
+                        songDuration.textContent = formatTime(music.duration);
+                        console.log(music)
+                        
+                    },300)
+
+                    
+            }},300);
+
+            
+
+            
+                forwardBtn.addEventListener("click",()=>{
+                    if(shuffle.classList.contains("block")){
+                        console.log("song shuffled")
+                    currentMusic = Math.floor(Math.random()*4)
+                setMusic(currentMusic)
+}})
+            
+
+       
+
+        // repeat playlist function 
+
+        repeat.addEventListener("click",()=>{
+            repeat.classList.remove("block");
+            repeat1.classList.remove("block");
+            shuffle.classList.add("block");
+        })
+
+        setInterval(()=>{
+            if(repeat.classList.contains("block") &&
+                formatTime(music.currentTime) == formatTime(music.duration))
+                {
+                    console.log("repeat playlist")
+                    if(currentMusic >= songs.length -1){
+                        currentMusic = 0;
+                    }else {
+                        currentMusic++;
+                        
+                    }
+                    setMusic(currentMusic)
+                    
+                    music.play();
+                    setTimeout(()=>{
+                        seekBar.max = music.duration;
+                        songDuration.textContent = formatTime(music.duration);
+                        console.log(music)
+                        
+                    },300)
+            }},300);
+
+
+
+        
 
         // next song function 
 
@@ -147,7 +261,7 @@ const initApp = ()=>{
             songDuration.textContent = formatTime(music.duration);
             console.log(music)
             
-        },500)
+        },300)
             
             
 
@@ -190,6 +304,8 @@ const initApp = ()=>{
 
     setMusic(4)
     console.log(currentMusic)
+    
+   
 
     
 

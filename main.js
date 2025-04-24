@@ -288,7 +288,7 @@ const initApp = ()=>{
                     songDuration.textContent = formatTime(music.duration);
                     console.log(music)
                     
-                },300)
+                },500)
             })
 
             // set song duration

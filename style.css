@@ -312,6 +312,12 @@
         box-shadow:none;
         
     }
+
+
+    .modes div {
+        align-content: center;
+
+    } 
 }
 
 

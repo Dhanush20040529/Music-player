@@ -287,8 +287,10 @@ const initApp = ()=>{
                     seekBar.max = music.duration;
                     songDuration.textContent = formatTime(music.duration);
                     console.log(music)
-                    
+                    console.log(music.duration); 
                 },500)
+
+                
             })
 
             // set song duration
@@ -297,6 +299,7 @@ const initApp = ()=>{
                 seekBar.max = music.duration;
                 songDuration.textContent = formatTime(music.duration);
                 console.log(music)
+                console.log("")
                 
             },500)
         

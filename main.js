@@ -288,7 +288,7 @@ const initApp = ()=>{
                     songDuration.textContent = formatTime(music.duration);
                     console.log(music)
                     console.log(music.duration); 
-                },500)
+                },1000)
 
                 
             })

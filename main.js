@@ -256,12 +256,12 @@ const initApp = ()=>{
 
             // set song duration 
         
-            setTimeout(()=>{
+            setInterval(()=>{
             seekBar.max = music.duration;
             songDuration.textContent = formatTime(music.duration);
             console.log(music)
             
-        },500)
+        },1000)
             
             
 
@@ -283,7 +283,7 @@ const initApp = ()=>{
 
                 // set song duration
 
-                setTimeout(()=>{
+                setInterval(()=>{
                     seekBar.max = music.duration;
                     songDuration.textContent = formatTime(music.duration);
                     console.log(music)
@@ -295,13 +295,13 @@ const initApp = ()=>{
 
             // set song duration
 
-            setTimeout(()=>{
+            setInterval(()=>{
                 seekBar.max = music.duration;
                 songDuration.textContent = formatTime(music.duration);
                 console.log(music)
                 console.log("")
                 
-            },500)
+            },1000)
         
     
 
